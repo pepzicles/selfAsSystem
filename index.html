@@ -1,0 +1,105 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    
+    <script>
+
+        var socket = io();
+
+        socket.on('data', function(data) {
+            console.log(data);
+            // document.getElementById('sample').style.opacity = data+"%";
+            document.getElementById('sample').innerHTML = data;
+        });
+
+    </script>
+   
+    
+    <title>Beyond the Calories</title>
+</head>
+<body>
+    <div class = "overallDiv col-lg-12 col-md-4" > 
+    
+        <div style = "display: flex; flex-direction: row;">
+            <div style = "flex: 1;">
+                <h1 class = 'projectTitle'>Beyond the Calories</h1>
+                <p style = "margin-top: 20px; width: 150px; line-height: 20px; font-style: italic;">A speculative project by Pepi Ng</p>
+                <div style = "margin-top: 40px; display: block">
+                    <a href = "about.html" class = "links">about project</a>
+                    <br>
+                    <a href = "index.html" style="background-color: yellow" class = "links">try it out</a>
+                </div>  
+            </div>
+
+
+
+            <div style = "flex: 1;">
+                <h3>How to visualize flavor profile:</h3>
+                <br>
+                <p>1. Get 100ml of a certain solution.</p>
+                <p>2. If the food is solid, crush the food into crumb-like pieces as small as possible, and try to dissolve them in 100ml of water.</p>
+                <p>3. Insert clean pH, salinity probes into the mixture.</p>
+                <p>4. Wait at least 10s.</p>
+                <p>5. Observe results on the radar chart!</p>
+            </div>
+            <div style = "flex: 3;"> 
+                <!-- RADAR CHART CANVAS -->
+                <div class = "row justify-content-center mt-4">
+                    <div class = "col-10">
+                        <div class = "card" style = 'border-width: 0px;'>
+                            <div class = "card-body d-flex justify-content-center" style="border-width: 0px; margin-top: -30px; padding: 0px; position: relative;">
+                                <canvas id = "myChart"></canvas>
+                            </div>
+
+                            <div class = "maximum maxSpice">
+                                <p style = "margin-bottom: 0px;">🌶️ Jalapeño <br><strong>1000 SHU</strong></p>
+                            </div>
+
+                            <div class = "maximum maxSalt">
+                                <p style = "margin-bottom: 0px;">🥓 Bacon <br><strong>200 SHU</strong></p>
+                            </div>
+
+                            <div class = "maximum maxSweet" style = "width: 100px; height: 65px;">
+                                <p style = "margin-bottom: 0px;">🍯 Pure Forest Honey <br><strong>78 °Bx</strong></p>
+                            </div>
+
+                            <div class = "maximum maxBitter" style = "width: 120px;">
+                                <p style = "margin-bottom: 0px;">🧼 Drain Cleaner <br><strong>14 pH</strong></p>
+                            </div>
+
+                            <div class = "maximum maxSour" style = "width: 110px;">
+                                <p style = "margin-bottom: 0px;">🔋 Battery Acid <br><strong>0 pH</strong></p>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div id = "sample"></div>
+        
+
+        
+
+
+
+    </div>
+    
+    <script src="script.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- <script src = "script.js"></script>  -->
+</body>
+
+</html>
