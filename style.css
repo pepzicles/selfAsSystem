@@ -15,23 +15,23 @@
 
 
 .maxSpice{
-    transform: translate(50%, -830%);
+    transform: translate(50%, -790%);
 }
 
 .maxSalt{
-    transform: translate(360%, -1350%);
+    transform: translate(320%, -1300%);
 }
 
 .maxSweet{
-    transform: translate(600%, -790%);
+    transform: translate(600%, -770%);
 }
 
 .maxBitter{
-    transform: translate(100%, -470%);
+    transform: translate(100%, -440%);
 }
 
 .maxSour{
-    transform: translate(470%, -570%);
+    transform: translate(470%, -550%);
 }
 
 .maximum{
